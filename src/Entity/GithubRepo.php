@@ -27,7 +27,6 @@ use Drupal\user\UserInterface;
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\github_repo\GithubRepoListBuilder",
- *     "views_data" = "Drupal\github_repo\Entity\GithubRepoViewsData",
  *     "form" = {
  *       "default" = "Drupal\github_repo\Form\GithubRepoForm",
  *       "add" = "Drupal\github_repo\Form\GithubRepoForm",
@@ -253,6 +252,8 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Github repo entity.'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings(array(
         'max_length' => 50,
         'text_processing' => 0,
@@ -272,6 +273,8 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('A boolean indicating whether the Github repo is published.'))
       ->setDefaultValue(TRUE);
 
@@ -286,10 +289,14 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The time that the entity was created.'));
 
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The time that the entity was last edited.'));
 
     $fields['revision_timestamp'] = BaseFieldDefinition::create('created')
@@ -309,6 +316,7 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
       ->setLabel(t('Revision log message'))
       ->setDescription(t('Briefly describe the changes you have made.'))
       ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
       ->setDefaultValue('')
       ->setDisplayOptions('form', array(
         'type' => 'string_textarea',
@@ -320,12 +328,16 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
 
     $fields['repo_id']= BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The ID of the Github repo (The gitbhub id).'))
       ->setReadOnly(TRUE);
 
     $fields['repo_full_name']  = BaseFieldDefinition::create('string')
       ->setLabel(t('Repo Name'))
       ->setDescription(t('The Full name of the github repo.'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings(array(
         'max_length' => 255,
         'text_processing' => 0,
@@ -347,6 +359,7 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
       ->setLabel(t('Repo Description'))
       ->setDescription(t('A description of the repo.'))
       ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDisplayOptions('view', array(
         'label' => 'hidden',
         'type' => 'text_default',
@@ -361,6 +374,7 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
 
     $fields['repo_private'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Private Repo'))
+      ->setRevisionable(TRUE)
       ->setDescription(t('A boolean indicating whether the Github repo is private.'))
       ->setDefaultValue(FALSE);
 
@@ -368,6 +382,7 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
       ->setLabel(t('Repo URL'))
       ->setDescription(t('Github repo URL.'))
       ->setRequired(TRUE)
+      ->setRevisionable(TRUE)
       ->setSettings(array(
         'link_type' => LinkItemInterface::LINK_GENERIC,
         'title' => DRUPAL_DISABLED,
@@ -379,26 +394,35 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
 
     $fields['repo_created'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Repo Created'))
+      ->setRevisionable(TRUE)
       ->setDescription(t('The time that the Github repo was created.'));
 
     $fields['repo_updated'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Repo Created'))
+      ->setRevisionable(TRUE)
       ->setDescription(t('The time that the Github repo was updated.'));
 
     $fields['repo_pushed'] = BaseFieldDefinition::create('datetime')
       ->setLabel(t('Repo Created'))
+      ->setRevisionable(TRUE)
       ->setDescription(t('The time that the Github repo was pushed.'));
 
     $fields['repo_star_count']= BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The number of stars for the repo.'));
 
     $fields['repo_watcher_count']= BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The number of watchers for the repo.'));
 
     $fields['repo_forks_count']= BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
+      ->setTranslatable(TRUE)
+      ->setRevisionable(TRUE)
       ->setDescription(t('The number of forks for the repo.'));
 
     return $fields;
