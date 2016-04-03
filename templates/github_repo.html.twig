@@ -1,0 +1,22 @@
+{#
+/**
+ * @file github_repo.html.twig
+ * Default theme implementation to present Github repo data.
+ *
+ * This template is used when viewing Github repo pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_github_repo()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('github_repo') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

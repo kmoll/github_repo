@@ -1,0 +1,7 @@
+name: github_repo
+type: module
+description: Provides github_repo entity as an example of creating custom entities
+core: 8.x
+package: Custom
+dependencies:
+  - link

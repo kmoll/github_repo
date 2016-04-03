@@ -1,0 +1,21 @@
+# Github repo routing definition
+github_repo.settings_tab:
+  route_name: github_repo.settings
+  title: 'Settings'
+  base_route: github_repo.settings
+entity.github_repo.canonical:
+  route_name: entity.github_repo.canonical
+  base_route: entity.github_repo.canonical
+  title: 'View'
+
+entity.github_repo.edit_form:
+  route_name: entity.github_repo.edit_form
+  base_route: entity.github_repo.canonical
+  title: Edit
+
+entity.github_repo.delete_form:
+  route_name:  entity.github_repo.delete_form
+  base_route:  entity.github_repo.canonical
+  title: Delete
+  weight: 10
+

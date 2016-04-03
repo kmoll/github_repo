@@ -1,0 +1,53 @@
+entity.github_repo.canonical:
+  path: 'admin/structure/github_repo/{github_repo}'
+  defaults:
+    _entity_view: 'github_repo'
+    _title: 'Github repo content'
+  requirements:
+    _entity_access: 'github_repo.view'
+
+entity.github_repo.collection:
+  path: '/admin/structure/github_repo'
+  defaults:
+    _entity_list: 'github_repo'
+    _title: 'Github Repo List'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'view github repo entities'
+
+entity.github_repo.add_form:
+  path: 'admin/structure/github_repo/add'
+  defaults:
+    _entity_form: 'github_repo.add'
+    _title: 'Add Github repo'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_create_access: 'github_repo'
+
+entity.github_repo.edit_form:
+  path: '/admin/structure/github_repo/{github_repo}/edit'
+  defaults:
+    _entity_form: github_repo.edit
+    _title: 'Edit Github'
+  requirements:
+    _entity_access: 'github_repo.edit'
+
+entity.github_repo.delete_form:
+  path: '/admin/structure/github_repo/{github_repo}/delete'
+  defaults:
+    _entity_form: github_repo.delete
+    _title: 'Delete Github repo'
+  requirements:
+    _entity_access: 'github_repo.delete'
+
+github_repo.settings:
+  path: 'admin/structure/github_repo/settings'
+  defaults:
+    _form: 'Drupal\github_repo\Form\GithubRepoSettingsForm'
+    _title: 'Github repo settings'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer github repo entities'

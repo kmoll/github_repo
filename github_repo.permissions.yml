@@ -1,0 +1,19 @@
+add github repo entities:
+  title: 'Create new Github repo entities'
+
+administer github repo entities:
+  title: 'Administer Github repo entities'
+  description: 'Allow to access the administration form to configure Github repo entities.'
+  restrict access: true
+
+delete github repo entities:
+  title: 'Delete Github repo entities'
+
+edit github repo entities:
+  title: 'Edit Github repo entities'
+
+view published github repo entities:
+  title: 'View published Github repo entities'
+
+view unpublished github repo entities:
+  title: 'View unpublished Github repo entities'

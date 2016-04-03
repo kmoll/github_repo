@@ -1,0 +1,7 @@
+entity.github_repo.add_form:
+  route_name: entity.github_repo.add_form
+  title: 'Add Github repo'
+  appears_on:
+    - entity.github_repo.collection
+    - entity.github_repo.canonical
+

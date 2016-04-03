@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains github_repo.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function github_repo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the github_repo module.
+    case 'help.page.github_repo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides github_repo entity as an example of creating custom entities') . '</p>';
+      return $output;
+
+    default:
+  }
+}
