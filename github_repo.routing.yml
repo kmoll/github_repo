@@ -51,3 +51,13 @@ github_repo.settings:
     _admin_route: TRUE
   requirements:
     _permission: 'administer github repo entities'
+
+### For task 2.
+github_repo.import_form:
+  path: 'github_repo/import_form'
+  defaults:
+    _form: 'Drupal\github_repo\Form\GithubRepoImportForm'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer github repo entities'
