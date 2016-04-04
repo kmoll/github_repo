@@ -70,7 +70,7 @@ class GithubRepoImportForm extends FormBase {
         'repo_updated' => strtotime($repo->updated_at),
         'repo_pushed' => strtotime($repo->pushed_at),
         'repo_star_count' => $repo->stargazers_count,
-        'repo_watchers_count' => $repo->watchers_count,
+        'repo_watcher_count' => $repo->watchers_count,
         'repo_forks_count' => $repo->forks_count,
       );
 
