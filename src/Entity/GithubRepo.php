@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\Entity\GithubRepo.
- */
-
 namespace Drupal\github_repo\Entity;
 
 use Drupal\Core\Entity\EntityStorageInterface;
@@ -248,7 +243,6 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
       ))
       ->setDisplayConfigurable('form', TRUE);
 
-
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Github repo entity.'))
@@ -326,7 +320,7 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
         ),
       ));
 
-    $fields['repo_id']= BaseFieldDefinition::create('integer')
+    $fields['repo_id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE)
@@ -407,19 +401,19 @@ class GithubRepo extends ContentEntityBase implements GithubRepoInterface {
       ->setRevisionable(TRUE)
       ->setDescription(t('The time that the Github repo was pushed.'));
 
-    $fields['repo_star_count']= BaseFieldDefinition::create('integer')
+    $fields['repo_star_count'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE)
       ->setDescription(t('The number of stars for the repo.'));
 
-    $fields['repo_watcher_count']= BaseFieldDefinition::create('integer')
+    $fields['repo_watcher_count'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE)
       ->setDescription(t('The number of watchers for the repo.'));
 
-    $fields['repo_forks_count']= BaseFieldDefinition::create('integer')
+    $fields['repo_forks_count'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('Github Repo ID'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE)

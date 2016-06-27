@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\Form\GithubRepoDeleteForm.
- */
-
 namespace Drupal\github_repo\Form;
 
 use Drupal\Core\Entity\ContentEntityDeleteForm;

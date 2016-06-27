@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\Form\GithubRepoForm.
- */
-
 namespace Drupal\github_repo\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
@@ -16,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @ingroup github_repo
  */
 class GithubRepoForm extends ContentEntityForm {
+
   /**
    * {@inheritdoc}
    */

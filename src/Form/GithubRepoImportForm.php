@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains Drupal\github_repo\Form\GithubRepoImportForm
- */
 
 namespace Drupal\github_repo\Form;
 
@@ -10,7 +6,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\github_repo\Entity\GithubRepo;
 
+/**
+ *
+ */
 class GithubRepoImportForm extends FormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -48,7 +48,7 @@ class GithubRepoImportForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $username = $form_state->getValue('github_username');
 
-    // Get the client service
+    // Get the client service.
     $client = \Drupal::service('http_client');
     // Generate a Github URL.
     $url = sprintf('https://api.github.com/users/%s/repos', $username);
@@ -57,14 +57,14 @@ class GithubRepoImportForm extends FormBase {
     // Decode the JSON response.
     $repos   = json_decode((string) $request->getBody());
 
-
     foreach ($repos as $repo) {
       $values = array(
         'name' => $repo->name,
         'repo_id' => $repo->id,
         'repo_full_name' => $repo->full_name,
         'repo_description' => $repo->description,
-        'repo_private' => FALSE, // Only public repos pulled.
+      // Only public repos pulled.
+        'repo_private' => FALSE,
         'repo_url' => $repo->html_url,
         'repo_created' => strtotime($repo->created_at),
         'repo_updated' => strtotime($repo->updated_at),
@@ -77,4 +77,5 @@ class GithubRepoImportForm extends FormBase {
       GithubRepo::create($values)->save();
     }
   }
+
 }

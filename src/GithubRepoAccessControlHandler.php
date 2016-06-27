@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\GithubRepoAccessControlHandler.
- */
-
 namespace Drupal\github_repo;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
@@ -18,6 +13,7 @@ use Drupal\Core\Access\AccessResult;
  * @see \Drupal\github_repo\Entity\GithubRepo.
  */
 class GithubRepoAccessControlHandler extends EntityAccessControlHandler {
+
   /**
    * {@inheritdoc}
    */

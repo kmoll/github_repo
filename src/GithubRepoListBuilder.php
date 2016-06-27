@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\GithubRepoListBuilder.
- */
-
 namespace Drupal\github_repo;
 
 use Drupal\Core\Entity\EntityInterface;
@@ -19,6 +14,7 @@ use Drupal\Core\Url;
  */
 class GithubRepoListBuilder extends EntityListBuilder {
   use LinkGeneratorTrait;
+
   /**
    * {@inheritdoc}
    */

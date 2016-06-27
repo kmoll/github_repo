@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Implements hook_help().
@@ -21,4 +22,36 @@ function github_repo_help($route_name, RouteMatchInterface $route_match) {
 
     default:
   }
+}
+
+/**
+ * Impelments hook_entity_base_field_info().
+ */
+function github_repo_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'user') {
+    // Add the Pfizer Login Employee Type field.
+    $fields['github_repo_github_user_name']  = BaseFieldDefinition::create('string')
+      ->setLabel(t('Github username.'))
+      ->setDescription(t('Username on Github.'))
+      ->setSettings(array(
+        'max_length' => 255,
+        'text_processing' => 0,
+      ))
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', array(
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  }
+
+  return $fields;
 }

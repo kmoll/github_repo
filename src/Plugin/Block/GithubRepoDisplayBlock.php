@@ -1,18 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\github_repo\Plugin\Block\GithubRepoDisplayBlock
- */
-
 namespace Drupal\github_repo\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Url;
 use Drupal\Core\Link;
 
 /**
- * Display Repos
+ * Display Repos.
  *
  * @Block(
  *   id = "github_repo_display_block",
@@ -60,6 +54,6 @@ class GithubRepoDisplayBlock extends BlockBase {
 
     return $build;
 
-
   }
+
 }
