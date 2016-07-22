@@ -33,7 +33,7 @@ class GithubRepoListBuilder extends EntityListBuilder {
     $row['name'] = $this->l(
       $entity->label(),
       new Url(
-        'entity.github_repo.edit_form', array(
+        'entity.github_repo.canonical', array(
           'github_repo' => $entity->id(),
         )
       )
