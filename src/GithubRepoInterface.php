@@ -1,15 +1,9 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\github_repo\GithubRepoInterface.
- */
-
 namespace Drupal\github_repo;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\EntityOwnerInterface;
 
 /**
@@ -18,7 +12,6 @@ use Drupal\user\EntityOwnerInterface;
  * @ingroup github_repo
  */
 interface GithubRepoInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
-  // Add get/set methods for your configuration properties here.
 
   /**
    * Gets the Github repo name.
@@ -72,7 +65,7 @@ interface GithubRepoInterface extends ContentEntityInterface, EntityChangedInter
    * Sets the published status of a Github repo.
    *
    * @param bool $published
-   *   TRUE to set this Github repo to published, FALSE to set it to unpublished.
+   *   TRUE to set this entity to published, FALSE to set it to unpublished.
    *
    * @return \Drupal\github_repo\GithubRepoInterface
    *   The called Github repo entity.

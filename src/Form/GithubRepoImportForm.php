@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\github_repo\Entity\GithubRepo;
 
 /**
- *
+ * Provides form ot import Github repos.
  */
 class GithubRepoImportForm extends FormBase {
 
