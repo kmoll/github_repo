@@ -1,8 +1,13 @@
 # Github repo routing definition
+github_repo.list_tab:
+  route_name: entity.github_repo.collection
+  title: 'List'
+  base_route: entity.github_repo.collection
 github_repo.settings_tab:
   route_name: github_repo.settings
   title: 'Settings'
-  base_route: github_repo.settings
+  base_route: entity.github_repo.collection
+
 entity.github_repo.canonical:
   route_name: entity.github_repo.canonical
   base_route: entity.github_repo.canonical
@@ -11,11 +16,11 @@ entity.github_repo.canonical:
 entity.github_repo.edit_form:
   route_name: entity.github_repo.edit_form
   base_route: entity.github_repo.canonical
-  title: Edit
+  title: 'Edit'
 
 entity.github_repo.delete_form:
   route_name:  entity.github_repo.delete_form
   base_route:  entity.github_repo.canonical
-  title: Delete
+  title: 'Delete'
   weight: 10
 

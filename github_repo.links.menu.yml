@@ -1,13 +1,13 @@
 # Github repo menu items definition
 entity.github_repo.collection:
-  title: 'Github repo list'
+  title: 'Github repo'
   route_name: entity.github_repo.collection
   description: 'List Github repo entities'
   parent: system.admin_structure
   weight: 100
 
-github_repo.admin.structure.settings:
-  title: Github repo settings
-  description: 'Configure Github repo entities'
-  route_name: github_repo.settings
-  parent: system.admin_structure
+#github_repo.admin.structure.settings:
+#  title: 'Github repo Settings'
+#  description: 'Configure Github repo entities'
+#  route_name: github_repo.settings
+#  parent: system.admin_structure
