@@ -1,0 +1,8 @@
+{
+  "name":"kmoll/github_repo",
+  "description":"Example module to demostration creating custom entities.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {}
+}
