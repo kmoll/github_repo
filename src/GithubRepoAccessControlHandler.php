@@ -33,7 +33,7 @@ class GithubRepoAccessControlHandler extends EntityAccessControlHandler {
         return AccessResult::allowedIfHasPermission($account, 'delete github repo entities');
     }
 
-    return AccessResult::allowed();
+    return AccessResult::neutral();
   }
 
   /**
